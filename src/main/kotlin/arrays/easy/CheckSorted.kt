@@ -157,13 +157,14 @@ class CheckSorted {
     }
     
     /**
-     * Idiomatic Kotlin approach using indices and all
+     * Idiomatic Kotlin approach using range and all
      * Checks if all adjacent pairs are in order
      */
     fun isSortedKotlinWay(arr: IntArray): Boolean {
         if (arr.size <= 1) return true
         
-        // Check all adjacent pairs using indices
+        // Check all adjacent pairs using range and all function
+        // Creates a range of indices and checks predicate for each
         return (0 until arr.size - 1).all { i -> arr[i] <= arr[i + 1] }
     }
     

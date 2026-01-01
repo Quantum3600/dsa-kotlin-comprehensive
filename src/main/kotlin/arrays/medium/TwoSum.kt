@@ -131,9 +131,9 @@ class TwoSum {
             // If yes, we've found our pair!
             if (map.containsKey(complement)) {
                 // Return the indices: complement's index and current index
-                // map[complement]!! gets the index where we saw the complement
+                // getValue() is safe here because we confirmed key exists with containsKey
                 // i is our current index
-                return intArrayOf(map[complement]!!, i)
+                return intArrayOf(map.getValue(complement), i)
             }
             
             // Complement not found yet
@@ -188,7 +188,7 @@ class TwoSum {
             val complement = target - nums[i]
             // Check if complement exists AND it's not the same element
             if (map.containsKey(complement) && map[complement] != i) {
-                return intArrayOf(i, map[complement]!!)
+                return intArrayOf(i, map.getValue(complement))
             }
         }
         
