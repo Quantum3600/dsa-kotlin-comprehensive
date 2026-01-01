@@ -311,15 +311,17 @@ class Functions {
     /**
      * INLINE FUNCTIONS
      */
+    // Inline function (optimized for lambdas) - defined at class level
+    // NOTE: Kotlin does not support local inline functions (inside another function)
+    // because inlining requires compile-time visibility. This must be a class member.
+    inline fun measureTime(block: () -> Unit): Long {
+        val start = System.nanoTime()
+        block()
+        return System.nanoTime() - start
+    }
+    
     fun inlineFunctionsExample() {
         println("=== Inline Functions ===")
-        
-        // Inline function (optimized for lambdas)
-        inline fun measureTime(block: () -> Unit): Long {
-            val start = System.nanoTime()
-            block()
-            return System.nanoTime() - start
-        }
         
         val time = measureTime {
             var sum = 0

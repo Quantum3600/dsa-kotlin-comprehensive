@@ -166,17 +166,7 @@ class TimeComplexityExamples {
     fun linearithmicTimeExamples() {
         println("=== O(n log n) - Linearithmic Time ===")
         
-        // Merge sort
-        fun mergeSort(arr: IntArray): IntArray {
-            if (arr.size <= 1) return arr
-            
-            val mid = arr.size / 2
-            val left = mergeSort(arr.sliceArray(0 until mid))
-            val right = mergeSort(arr.sliceArray(mid until arr.size))
-            
-            return merge(left, right)
-        }
-        
+        // Helper function for merging - defined before use
         fun merge(left: IntArray, right: IntArray): IntArray {
             val result = IntArray(left.size + right.size)
             var i = 0
@@ -195,6 +185,17 @@ class TimeComplexityExamples {
             while (j < right.size) result[k++] = right[j++]
             
             return result
+        }
+        
+        // Merge sort
+        fun mergeSort(arr: IntArray): IntArray {
+            if (arr.size <= 1) return arr
+            
+            val mid = arr.size / 2
+            val left = mergeSort(arr.sliceArray(0 until mid))
+            val right = mergeSort(arr.sliceArray(mid until arr.size))
+            
+            return merge(left, right)
         }
         
         // Example

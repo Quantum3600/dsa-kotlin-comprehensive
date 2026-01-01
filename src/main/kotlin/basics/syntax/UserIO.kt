@@ -359,7 +359,7 @@ fun main() {
     println("✓ Use readLine() for basic input")
     println("✓ Always handle null and conversion errors")
     println("✓ Use toIntOrNull() for safe conversion")
-    println("✓ String templates ($var) for easy output")
+    println("✓ String templates (\$var) for easy output")
     println("✓ split() and map() for parsing multiple values")
     println("✓ Scanner for more complex input patterns")
 }
