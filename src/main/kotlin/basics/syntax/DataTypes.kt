@@ -401,7 +401,7 @@ fun main() {
     println("=== Key Takeaways ===")
     println("✓ Kotlin has no primitive types - everything is an object")
     println("✓ Type inference makes code concise")
-    println("✓ Nullable types (?") provide null safety")
+    println("✓ Nullable types (?) provide null safety")
     println("✓ Use val by default, var only when needed")
     println("✓ Explicit type conversion required (no implicit widening)")
     println("✓ Rich standard library for type operations")

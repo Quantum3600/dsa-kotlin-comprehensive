@@ -173,10 +173,10 @@ class RecursiveInsertionSort {
     }
     
     /**
-     * Tail-recursive version
-     * Can be optimized by compiler to iterative
+     * Note: This version demonstrates recursion structure
+     * but cannot be tail-recursive due to insertion after recursive call
      */
-    tailrec fun insertionSortTailRec(arr: IntArray, n: Int = arr.size) {
+    fun insertionSortTailRec(arr: IntArray, n: Int = arr.size) {
         // Base case
         if (n <= 1) return
         
