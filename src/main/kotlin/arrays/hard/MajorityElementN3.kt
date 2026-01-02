@@ -65,8 +65,8 @@
  * Candidates: 1, 3
  * 
  * Second pass (verify):
- * Count of 1 = 3 (3 > 3? No, equal is not >, so no)
- * Count of 3 = 4 (4 > 3? Yes)
+ * Count of 1 = 3 (need count > 3, but 3 is not > 3, so excluded)
+ * Count of 3 = 4 (4 > 3? Yes, included)
  * 
  * Result: [3]
  * 

@@ -168,8 +168,8 @@ class ReversePairs {
  * ============================================================================
  * 
  * 1. Single element: [1] → 0 pairs
- * 2. Two elements valid: [5, 2] → 1 pair (5 > 2*2 is false, no pair)
- * 3. Two elements valid: [5, 1] → 1 pair (5 > 2*1 is true)
+ * 2. Two elements: [5, 2] → 1 pair (5 > 2*2 = 4, so 5 > 4 is true)
+ * 3. Two elements: [5, 1] → 1 pair (5 > 2*1 is true)
  * 4. Sorted array: [1,2,3,4] → 0 pairs
  * 5. Reverse sorted: [4,3,2,1] → Some pairs
  * 6. All same: [2,2,2,2] → 0 pairs
