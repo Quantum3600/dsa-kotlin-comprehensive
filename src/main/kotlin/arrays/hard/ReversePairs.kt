@@ -102,6 +102,7 @@ class ReversePairs {
     /**
      * Counts pairs where nums[i] > 2 * nums[j]
      * Both halves are sorted
+     * Note: Using 2L to ensure Long arithmetic and prevent overflow
      */
     private fun countPairs(nums: IntArray, left: Int, mid: Int, right: Int): Int {
         var count = 0
@@ -110,6 +111,7 @@ class ReversePairs {
         // For each element in left half
         for (i in left..mid) {
             // Find how many elements in right half satisfy condition
+            // 2L ensures Long multiplication to prevent overflow
             while (j <= right && nums[i] > 2L * nums[j]) {
                 j++
             }
@@ -148,11 +150,13 @@ class ReversePairs {
     /**
      * Brute force approach - check all pairs
      * Time: O(n²), Space: O(1)
+     * Note: Using 2L to ensure Long arithmetic and prevent overflow
      */
     fun reversePairsBruteForce(nums: IntArray): Int {
         var count = 0
         for (i in nums.indices) {
             for (j in i + 1 until nums.size) {
+                // 2L ensures Long multiplication to prevent overflow
                 if (nums[i] > 2L * nums[j]) {
                     count++
                 }

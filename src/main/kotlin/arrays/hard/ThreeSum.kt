@@ -60,16 +60,16 @@
  *   sum = -1 + 2 = 1 < 4, move L
  *   No solution for i=0
  * 
- * Step 3: Fix i=1 (nums[i]=-1), target=1
+ * Step 3: Fix i=1 (nums[i]=-1), need pairs summing to 1
  *   [-4, -1, -1, 0, 1, 2]
  *         i   L        R
- *   sum = -1 + 2 = 1 = target ✓
+ *   sum = -1 + 2 = 1 (total: -1 + -1 + 2 = 0) ✓
  *   Found: [-1, -1, 2]
  * 
  * Step 4: Continue with same i, move pointers
  *   [-4, -1, -1, 0, 1, 2]
  *         i      L  R
- *   sum = 0 + 1 = 1 = target ✓
+ *   sum = 0 + 1 = 1 (total: -1 + 0 + 1 = 0) ✓
  *   Found: [-1, 0, 1]
  * 
  * ALTERNATIVE APPROACHES:
@@ -242,18 +242,18 @@ class ThreeSum {
  * sum = 1 + 2 = 3 < 4 → move L
  * L >= R, no solution
  * 
- * Step 3: i=1, nums[i]=-1, target=1
+ * Step 3: i=1, nums[i]=-1, need pairs summing to 1
  * Two pointers: L=2, R=5
- * sum = -1 + 2 = 1 = target ✓
+ * sum = -1 + 2 = 1 (total: -1 + -1 + 2 = 0) ✓
  * Found: [-1, -1, 2]
  * Skip duplicates at L
  * Move L to 3, R to 4
- * sum = 0 + 1 = 1 = target ✓
+ * sum = 0 + 1 = 1 (total: -1 + 0 + 1 = 0) ✓
  * Found: [-1, 0, 1]
  * 
  * Step 4: i=2, nums[i]=-1 (duplicate, skip)
  * 
- * Step 5: i=3, nums[i]=0, target=0
+ * Step 5: i=3, nums[i]=0, need pairs summing to 0
  * Two pointers: L=4, R=5
  * sum = 1 + 2 = 3 > 0 → move R
  * L >= R, no solution
