@@ -427,7 +427,7 @@ fun main() {
     
     // Test 7: Positive sign
     println("Test 7: Positive sign")
-    println("Input: s = \"+123\"")
+    println("Input: s = '+123'")
     println("Output: ${solution.myAtoi("+123")}")
     println("Expected: 123\n")
     

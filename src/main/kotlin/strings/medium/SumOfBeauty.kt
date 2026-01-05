@@ -216,6 +216,7 @@ class SumOfBeauty {
     
     /**
      * Helper function to list all substrings with their beauties
+     * Note: Only returns substrings with beauty > 0 for clarity
      */
     fun listSubstringBeauties(s: String): List<Triple<String, Int, Int>> {
         val result = mutableListOf<Triple<String, Int, Int>>()
