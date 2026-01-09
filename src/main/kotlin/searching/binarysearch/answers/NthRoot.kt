@@ -220,7 +220,7 @@ fun main() {
     // Test Case 5: Large perfect power
     println("Test 5: n = 3, m = 1000")
     println("Result: ${solver.solve(3, 1000)}")
-    println("Expected: 10\n")
+    println("Expected: 10 (10³ = 1000)\n")
     
     // Test Case 6: Large n
     println("Test 6: n = 10, m = 1024")

@@ -116,6 +116,13 @@ class KthElementOfTwoSorted {
             val cut1 = (low + high) / 2  // Elements to take from arr1
             val cut2 = k - cut1           // Elements to take from arr2
             
+            // Validate cut2 is within bounds
+            if (cut2 < 0 || cut2 > m) {
+                if (cut2 < 0) low = cut1 + 1
+                else high = cut1 - 1
+                continue
+            }
+            
             // Get boundary elements
             val left1 = if (cut1 == 0) Int.MIN_VALUE else arr1[cut1 - 1]
             val left2 = if (cut2 == 0) Int.MIN_VALUE else arr2[cut2 - 1]
