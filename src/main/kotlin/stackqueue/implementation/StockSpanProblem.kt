@@ -312,4 +312,6 @@ fun main() {
  * ❌ Not adding ALL popped spans (missing sum)
  * 
  * KEY POINTS:
- * ✅
+ * ✅ Monotonic Stack is key pattern
+ * ✅ Amortized O(1) complexity
+ */
