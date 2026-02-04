@@ -79,4 +79,95 @@ package greedy.mediumhard
 class NonOverlappingIntervals {
     
     /**
-     * Returns
+     * Returns minimum intervals to remove
+     */
+    fun eraseOverlapIntervals(intervals: Array<IntArray>): Int {
+        if (intervals.isEmpty()) return 0
+        
+        // Sort by end time
+        intervals.sortBy { it[1] }
+        
+        var removals = 0
+        var lastEnd = intervals[0][1]
+        
+        for (i in 1 until intervals.size) {
+            if (intervals[i][0] < lastEnd) {
+                // Overlapping - remove current interval
+                removals++
+            } else {
+                // Non-overlapping - update last end
+                lastEnd = intervals[i][1]
+            }
+        }
+        
+        return removals
+    }
+    
+    /**
+     * Alternative: Returns maximum non-overlapping intervals
+     */
+    fun maxNonOverlapping(intervals: Array<IntArray>): Int {
+        if (intervals.isEmpty()) return 0
+        
+        intervals.sortBy { it[1] }
+        
+        var count = 1
+        var lastEnd = intervals[0][1]
+        
+        for (i in 1 until intervals.size) {
+            if (intervals[i][0] >= lastEnd) {
+                count++
+                lastEnd = intervals[i][1]
+            }
+        }
+        
+        return count
+    }
+}
+
+/**
+ * ============================================================================
+ * EDGE CASES
+ * ============================================================================
+ * 
+ * 1. Single interval: [[1,2]] → 0
+ * 2. No overlap: [[1,2],[2,3]] → 0
+ * 3. All overlap: [[1,2],[1,2],[1,2]] → 2
+ * 4. Nested: [[1,100],[11,22],[1,11],[2,12]] → 2
+ * 5. Adjacent: [[1,2],[2,3],[3,4]] → 0
+ * 6. Complete overlap: [[1,10],[2,3],[4,5]] → 2
+ * 
+ * APPLICATIONS:
+ * - Interval scheduling
+ * - Resource allocation
+ * - Meeting room optimization
+ * - Task scheduling
+ * 
+ * ============================================================================
+ */
+
+fun main() {
+    val solution = NonOverlappingIntervals()
+    
+    println("Non-overlapping Intervals - Test Cases")
+    println("========================================\n")
+    
+    println("Test 1: [[1,2],[2,3],[3,4],[1,3]]")
+    println("Removals: ${solution.eraseOverlapIntervals(arrayOf(
+        intArrayOf(1,2), intArrayOf(2,3), 
+        intArrayOf(3,4), intArrayOf(1,3)
+    ))}")
+    println("Expected: 1 ✓\n")
+    
+    println("Test 2: [[1,2],[1,2],[1,2]]")
+    println("Removals: ${solution.eraseOverlapIntervals(arrayOf(
+        intArrayOf(1,2), intArrayOf(1,2), intArrayOf(1,2)
+    ))}")
+    println("Expected: 2 ✓\n")
+    
+    println("Test 3: [[1,2],[2,3]]")
+    println("Removals: ${solution.eraseOverlapIntervals(arrayOf(
+        intArrayOf(1,2), intArrayOf(2,3)
+    ))}")
+    println("Expected: 0 ✓\n")
+}
