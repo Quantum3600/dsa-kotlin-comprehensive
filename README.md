@@ -790,7 +790,7 @@ If you find this repository helpful, please consider giving it a ⭐!
 
 - 🐛 **Issues**: [GitHub Issues](https://github.com/Quantum3600/dsa-kotlin-comprehensive/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/Quantum3600/dsa-kotlin-comprehensive/discussions)
-- 📧 **Email**: For private inquiries
+- 📧 **Email**: trishitquantum360@gmail.com For private inquiries
 
 ## 🙏 Acknowledgments
 
