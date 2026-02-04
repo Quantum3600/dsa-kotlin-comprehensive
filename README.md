@@ -5,7 +5,7 @@
 **A Complete Data Structures and Algorithms Repository in Kotlin**  
 *From Beginner to Advanced - Learn by Doing*
 
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-blue.svg)](https://kotlinlang.org/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blue.svg)](https://kotlinlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -512,7 +512,7 @@ Month 4: Advanced Topics
 
 > **🎯 Track your journey!** Check off problems as you solve them. Aim for understanding, not just completion.
 
-### 📈 Overall Progress
+### 📈 Overall Progress (Example)
 
 ```
 🎯 Total: 200+ Problems Solved
@@ -739,7 +739,7 @@ Every problem includes:
 
 ## 🔧 Built With
 
-- **Kotlin 2.0.0** - Modern, concise JVM language with the latest features
+- **Kotlin 2.0.21** - Modern, concise JVM language with the latest features
 - **Gradle** - Build automation
 - **JDK 17** - Java Development Kit
 
