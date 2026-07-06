@@ -77,6 +77,26 @@ class MissingNumber {
         
         return xor
     }
+
+    /**
+     * using XOR and Kotlin Idioms
+     */
+    fun findMissingXOR(arr: IntArray): Int {
+        return arr.reduce { acc, n -> acc xor n }
+    }
+    
+    /**
+     * using one loop xor
+     */
+    fun findMissingXOR(arr: IntArray): Int {
+        val n = arr.size
+        var xor = 0
+        for (i in 0..n) {
+            xor = xor xor i xor nums[i]
+        }
+        return xor
+     }
+    
     
     /**
      * Approach 3: Using HashSet
